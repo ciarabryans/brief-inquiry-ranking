@@ -18,7 +18,7 @@ const songs = [
 
 const songList = document.getElementById("song-list");
 
-// Add songs dynamically to the list with static markers for Top 5 and Top 10
+// Add songs dynamically to the list with static marker for Top 5
 function renderSongs() {
   songList.innerHTML = ''; // Clear the list
 
@@ -28,12 +28,6 @@ function renderSongs() {
       top5Marker.classList.add("marker");
       top5Marker.textContent = "— TOP 5 —";
       songList.appendChild(top5Marker);
-    }
-    if (index === 10) {
-      const top10Marker = document.createElement("div");
-      top10Marker.classList.add("marker");
-      top10Marker.textContent = "— TOP 10 —";
-      songList.appendChild(top10Marker);
     }
 
     const li = document.createElement("li");
@@ -48,7 +42,7 @@ new Sortable(songList, {
   onEnd: () => updateRanks() // Update ranks and re-insert static markers after reorder
 });
 
-// Update ranks and re-insert static markers after reordering
+// Update ranks and re-insert static marker after reordering
 function updateRanks() {
   const items = Array.from(songList.querySelectorAll("li"));
   items.forEach((li, index) => {
@@ -58,19 +52,12 @@ function updateRanks() {
   // Remove existing markers and re-add
   document.querySelectorAll(".marker").forEach(marker => marker.remove());
 
-  // Add static markers
+  // Add static Top 5 marker
   if (items[5]) {
     const top5Marker = document.createElement("div");
     top5Marker.classList.add("marker");
     top5Marker.textContent = "— TOP 5 —";
     songList.insertBefore(top5Marker, items[5]);
-  }
-
-  if (items[10]) {
-    const top10Marker = document.createElement("div");
-    top10Marker.classList.add("marker");
-    top10Marker.textContent = "— TOP 10 —";
-    songList.insertBefore(top10Marker, items[10]);
   }
 }
 
