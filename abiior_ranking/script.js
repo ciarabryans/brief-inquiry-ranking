@@ -48,8 +48,8 @@ renderSongs();
 // Function to create a tweet with the current ranking
 document.getElementById("tweet-results").addEventListener("click", () => {
   const items = Array.from(songList.children);
-  const ranking = items.map((li, index) => `${index + 1}. ${li.textContent.trim()}`).join(" ");
-  
+  const ranking = items.map((li) => li.textContent.trim()).join(" "); // Combine song titles with ranks already shown
+
   // Construct the tweet text
   const baseText = `My ABIIOR ranking: `;
   const hashtag = " #The1975";
