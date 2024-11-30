@@ -286,6 +286,9 @@ footer {
   .instructions {
     font-size: 0.8em; /* Adjust instructions */
   }
+  .content {
+    padding-bottom: 100px;
+  }
   footer {
     font-size: 0.8em;
   }
