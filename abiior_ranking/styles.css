@@ -164,7 +164,7 @@ ul li {
 
 header {
   text-align: left;
-  margin-bottom: 30px;
+  /* Removed margin-bottom */
 }
 
 .subheader {
@@ -204,7 +204,7 @@ h2 {
 
 /* Main Section */
 .main {
-  margin: 20px 0;
+  /* Removed margin-top */
 }
 
 .instructions {
