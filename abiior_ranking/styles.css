@@ -1,3 +1,22 @@
+/* Import Suisse Int'l Book Font */
+@import url("https://db.onlinewebfonts.com/c/17241fb9c2ffb3ec11eba762e771435f?family=Suisse+Int%27l+Book");
+
+@font-face {
+  font-family: "Suisse Int'l Book";
+  src: url("https://db.onlinewebfonts.com/t/17241fb9c2ffb3ec11eba762e771435f.eot");
+  src: url("https://db.onlinewebfonts.com/t/17241fb9c2ffb3ec11eba762e771435f.eot?#iefix") format("embedded-opentype"),
+       url("https://db.onlinewebfonts.com/t/17241fb9c2ffb3ec11eba762e771435f.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/17241fb9c2ffb3ec11eba762e771435f.woff") format("woff"),
+       url("https://db.onlinewebfonts.com/t/17241fb9c2ffb3ec11eba762e771435f.ttf") format("truetype"),
+       url("https://db.onlinewebfonts.com/t/17241fb9c2ffb3ec11eba762e771435f.svg#Suisse Int'l Book") format("svg");
+}
+
+/* Import Bembo Regular Font Locally */
+@font-face {
+  font-family: "Bembo Regular";
+  src: url("./fonts/Bembo_Regular.otf") format("opentype");
+}
+
 /* General Reset */
 body, ul, li, button, h1, h2, p {
   margin: 0;
@@ -9,11 +28,16 @@ body, ul, li, button, h1, h2, p {
 body {
   background-color: #fff;
   color: #000;
-  font-family: 'Bembo Regular', Arial, sans-serif;
+  font-family: "Bembo Regular", Arial, serif;
   line-height: 1.6;
   min-height: 100vh;
   overflow: hidden;
   position: relative;
+}
+
+/* Apply Bembo Regular to paragraph and list text */
+p, ul li {
+  font-family: "Bembo Regular", Arial, serif;
 }
 
 /* Scrollable content container */
@@ -144,7 +168,7 @@ h1 {
   font-size: 2.5em;
   font-weight: bold;
   margin: 10px 0;
-  font-family: "Suisse Int'l Book", Arial, sans-serif;
+  font-family: "Suisse Int'l Book", Arial, sans-serif; /* Apply Suisse Int'l Book */
   text-transform: uppercase;
   color: #000;
 }
@@ -153,7 +177,7 @@ h2 {
   font-size: 1.8em;
   font-weight: normal;
   margin-bottom: 10px;
-  font-family: "Suisse Int'l Book", Arial, sans-serif;
+  font-family: "Suisse Int'l Book", Arial, sans-serif; /* Apply Suisse Int'l Book */
   text-transform: uppercase;
   color: #000;
 }
@@ -234,4 +258,23 @@ footer {
   margin-top: 20px;
   font-size: 0.9em;
   color: #888;
+}
+
+/* Smaller text on mobile */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  p, ul li {
+    font-size: 0.9em; /* Smaller text for body and lists */
+  }
+  .instructions {
+    font-size: 0.8em; /* Adjust instructions */
+  }
+  footer {
+    font-size: 0.8em;
+  }
 }
