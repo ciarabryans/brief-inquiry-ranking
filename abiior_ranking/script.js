@@ -47,8 +47,28 @@ renderSongs();
 
 // Function to create a tweet with the current ranking
 document.getElementById("tweet-results").addEventListener("click", () => {
-  const ranking = Array.from(songList.children).map((li) => li.textContent.trim()).join(" > ");
-  const tweetText = `Here's my "A Brief Inquiry Into Online Relationships" ranking: ${ranking}. What's yours? #The1975`;
+  const items = Array.from(songList.children);
+  const ranking = items.map((li, index) => `${index + 1}. ${li.textContent.trim()}`).join(" | ");
+  
+  // Construct the tweet text
+  const baseText = `Here's my "A Brief Inquiry Into Online Relationships" ranking: `;
+  const hashtag = " #The1975";
+  const maxTweetLength = 280;
+
+  // Calculate available space for the ranking
+  const availableSpace = maxTweetLength - (baseText.length + hashtag.length);
+
+  // Truncate the ranking if necessary
+  let tweetRanking = ranking;
+  if (ranking.length > availableSpace) {
+    tweetRanking = ranking.slice(0, availableSpace - 3) + "..."; // Leave space for ellipsis
+  }
+
+  const tweetText = baseText + tweetRanking + hashtag;
+
+  // Construct the Twitter share URL
   const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
+
+  // Open the Twitter share URL
   window.open(tweetUrl, "_blank"); // Open Twitter's compose page
 });
