@@ -109,6 +109,15 @@ ul li {
   cursor: grab;
   font-size: 1em;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+ul li .rank {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #ccc; /* Light gray for numbers */
+  text-transform: none; /* Keep numbers non-uppercase */
 }
 
 ul li:hover {
