@@ -273,6 +273,20 @@ footer {
   color: #888;
 }
 
+/* Compact Layout for Screenshot Mode */
+.screenshot-mode ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns for compact layout */
+  gap: 10px; /* Space between items */
+}
+
+.screenshot-mode ul li {
+  text-align: left; /* Align text properly */
+  padding: 10px; /* Add padding for readability */
+  font-size: 0.9em; /* Slightly smaller font */
+}
+
+
 /* Smaller text on mobile */
 @media (max-width: 768px) {
   h1 {
