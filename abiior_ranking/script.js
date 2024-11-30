@@ -26,7 +26,7 @@ function renderSongs() {
     if (index === 5) {
       const top5Marker = document.createElement("div");
       top5Marker.classList.add("marker");
-      top5Marker.textContent = "— TOP 5 —";
+      top5Marker.textContent = "TOP 5";
       songList.appendChild(top5Marker);
     }
 
@@ -56,7 +56,7 @@ function updateRanks() {
   if (items[5]) {
     const top5Marker = document.createElement("div");
     top5Marker.classList.add("marker");
-    top5Marker.textContent = "— TOP 5 —";
+    top5Marker.textContent = "TOP 5";
     songList.insertBefore(top5Marker, items[5]);
   }
 }
