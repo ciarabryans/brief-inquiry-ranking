@@ -24,6 +24,9 @@ function renderSongs() {
   songs.forEach((song, index) => {
     const li = document.createElement("li");
     li.innerHTML = `<span class="rank">${index + 1}.</span> ${song}`;
+    if (index === 9) { // Add a "Top 10" marker after the 10th song
+      li.classList.add('top-divider');
+    }
     songList.appendChild(li);
   });
 }
@@ -39,6 +42,13 @@ function updateRanks() {
   const items = Array.from(songList.children);
   items.forEach((li, index) => {
     li.querySelector('.rank').textContent = `${index + 1}.`;
+
+    // Add or remove the "Top 10" marker
+    if (index === 9) {
+      li.classList.add('top-divider');
+    } else {
+      li.classList.remove('top-divider');
+    }
   });
 }
 

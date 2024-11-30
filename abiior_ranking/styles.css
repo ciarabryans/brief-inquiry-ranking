@@ -75,37 +75,37 @@ ul li {
 
 /* Apply slight transparency to all squares */
 .square.red {
-  background-color: rgba(255, 95, 95, 0.8); /* Slightly transparent red */
+  background-color: rgba(255, 95, 95, 0.8);
   top: 12%;
   left: 12%;
 }
 
 .square.blue {
-  background-color: rgba(128, 198, 255, 0.8); /* Slightly transparent blue */
+  background-color: rgba(128, 198, 255, 0.8);
   top: 78%;
   left: 78%;
 }
 
 .square.green {
-  background-color: rgba(105, 229, 139, 0.8); /* Slightly transparent green */
+  background-color: rgba(105, 229, 139, 0.8);
   top: 48%;
   left: 30%;
 }
 
 .square.yellow {
-  background-color: rgba(255, 215, 0, 0.8); /* Slightly transparent yellow */
+  background-color: rgba(255, 215, 0, 0.8);
   top: 55%;
   left: 70%;
 }
 
 .square.purple {
-  background-color: rgba(176, 136, 249, 0.8); /* Slightly transparent purple */
+  background-color: rgba(176, 136, 249, 0.8);
   top: 75%;
   left: 50%;
 }
 
 .square.black {
-  background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent black */
+  background-color: rgba(0, 0, 0, 0.8);
   top: 88%;
   left: 15%;
 }
@@ -180,7 +180,7 @@ h1 {
   font-size: 2.5em;
   font-weight: normal;
   margin: 10px 0;
-  font-family: "Suisse Int'l Book", Arial, sans-serif; /* Apply Suisse Int'l Book */
+  font-family: "Suisse Int'l Book", Arial, sans-serif;
   text-transform: uppercase;
   color: #000;
 }
@@ -189,7 +189,7 @@ h2 {
   font-size: 1.8em;
   font-weight: normal;
   margin-bottom: 10px;
-  font-family: "Suisse Int'l Book", Arial, sans-serif; /* Apply Suisse Int'l Book */
+  font-family: "Suisse Int'l Book", Arial, sans-serif;
   text-transform: uppercase;
   color: #000;
 }
@@ -223,8 +223,8 @@ ul {
 }
 
 ul li {
-  background: rgba(249, 249, 249, 0.9); /* Less transparent background */
-  border: 1px solid rgba(221, 221, 221, 0.95); /* Less transparent border */
+  background: rgba(249, 249, 249, 0.9);
+  border: 1px solid rgba(221, 221, 221, 0.95);
   margin: 8px 0;
   padding: 10px 15px;
   border-radius: 5px;
@@ -232,6 +232,7 @@ ul li {
   text-transform: uppercase;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 ul li .rank {
@@ -241,8 +242,25 @@ ul li .rank {
   text-transform: none;
 }
 
+/* Add a subtle Top 10 indicator */
+ul li.top-divider::after {
+  content: "Top 10";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.8em;
+  font-family: "Suisse Int'l Book", Arial, sans-serif;
+  color: #888;
+  background-color: #f9f9f9;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
 ul li:hover {
-  background: rgba(230, 230, 230, 0.9); /* Darker shade on hover */
+  background: rgba(230, 230, 230, 0.9);
 }
 
 /* Button Styles */
@@ -283,10 +301,10 @@ footer {
     line-height: 1.3em;
   }
   p, ul li {
-    font-size: 0.9em; /* Smaller text for body and lists */
+    font-size: 0.9em;
   }
   .instructions {
-    font-size: 0.8em; /* Adjust instructions */
+    font-size: 0.8em;
   }
   .content {
     padding-bottom: 100px;
@@ -296,8 +314,8 @@ footer {
     font-size: 0.8em;
   }
   .subheader {
-    font-size: 0.6em; /* Smaller subheader */
-    letter-spacing: 1.5px; /* Adjust letter spacing */
-    margin-bottom: 5px; /* Reduce margin */
+    font-size: 0.6em;
+    letter-spacing: 1.5px;
+    margin-bottom: 5px;
   }
 }
