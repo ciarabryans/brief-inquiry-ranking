@@ -34,49 +34,26 @@ body {
   min-height: 100vh;
   padding: 40px 20px;
   position: relative;
+
+  /* Background squares */
+  background-image: 
+    linear-gradient(to bottom, #ff5f5f 20px, transparent 20px),
+    linear-gradient(to bottom, #80c6ff 20px, transparent 20px),
+    linear-gradient(to bottom, #69e58b 20px, transparent 20px),
+    linear-gradient(to bottom, #ffd700 20px, transparent 20px),
+    linear-gradient(to bottom, #b088f9 20px, transparent 20px),
+    linear-gradient(to bottom, #000 20px, transparent 20px);
+  background-position: 
+    10% 10%, 80% 20%, 30% 50%, 70% 60%, 50% 80%, 15% 90%;
+  background-repeat: no-repeat;
 }
 
-/* Colored Squares */
-.square {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-}
-
-.square.red {
-  background-color: #ff5f5f;
-  top: 20%;
-  right: 20%;
-}
-
-.square.blue {
-  background-color: #80c6ff;
-  top: 10%;
-  left: 25%;
-}
-
-.square.green {
-  background-color: #69e58b;
-  top: 60%;
-  left: 30%;
-}
-
-.square.yellow {
-  background-color: #ffd700;
-  top: 50%;
-  right: 30%;
-}
-
-.square.purple {
-  background-color: #b088f9;
-  bottom: 15%;
-  right: 15%;
-}
-
-.square.black {
-  background-color: #000;
-  bottom: 25%;
-  left: 20%;
+@media (max-width: 768px) {
+  body {
+    background-size: 10px 10px; /* Smaller squares on mobile */
+    background-position: 
+      5% 5%, 85% 10%, 20% 60%, 75% 55%, 40% 85%, 10% 95%;
+  }
 }
 
 /* Content Wrapper */
@@ -86,7 +63,7 @@ body {
   border: none;
   padding: 20px 30px;
   position: relative;
-  z-index: 2; /* Ensure content is above squares */
+  z-index: 2; /* Ensure content is above background */
 }
 
 /* Header Section */
