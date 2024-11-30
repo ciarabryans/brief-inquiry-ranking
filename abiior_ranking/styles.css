@@ -17,37 +17,94 @@ body {
   min-height: 100vh;
   padding: 40px 20px;
   position: relative;
-
-  /* Static background squares */
-  background-image: 
-    linear-gradient(to bottom, #ff5f5f 30px, transparent 30px), /* Red */
-    linear-gradient(to bottom, #80c6ff 30px, transparent 30px), /* Blue */
-    linear-gradient(to bottom, #69e58b 30px, transparent 30px), /* Green */
-    linear-gradient(to bottom, #ffd700 30px, transparent 30px), /* Yellow */
-    linear-gradient(to bottom, #b088f9 30px, transparent 30px), /* Purple */
-    linear-gradient(to bottom, #000 30px, transparent 30px); /* Black */
-  background-position: 
-    12% 12%, 78% 18%, 30% 48%, 70% 55%, 50% 75%, 15% 88%;
-  background-repeat: no-repeat;
-  background-size: 30px 30px; /* Set square size */
-  background-attachment: fixed; /* Keep squares static during scrolling */
 }
 
-/* Adjust squares for tablet (medium screens) */
+/* Fixed background squares using pseudo-elements */
+body::before {
+  content: '';
+  position: fixed;
+  top: 12%;
+  left: 12%;
+  width: 30px;
+  height: 30px;
+  background-color: #ff5f5f; /* Red */
+  z-index: -1; /* Behind content */
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 78%;
+  left: 78%;
+  width: 30px;
+  height: 30px;
+  background-color: #80c6ff; /* Blue */
+  z-index: -1; /* Behind content */
+}
+
+/* Individual squares for remaining colors */
+.square.green {
+  position: fixed;
+  top: 48%;
+  left: 30%;
+  width: 30px;
+  height: 30px;
+  background-color: #69e58b; /* Green */
+  z-index: -1;
+}
+
+.square.yellow {
+  position: fixed;
+  top: 55%;
+  left: 70%;
+  width: 30px;
+  height: 30px;
+  background-color: #ffd700; /* Yellow */
+  z-index: -1;
+}
+
+.square.purple {
+  position: fixed;
+  top: 75%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #b088f9; /* Purple */
+  z-index: -1;
+}
+
+.square.black {
+  position: fixed;
+  top: 88%;
+  left: 15%;
+  width: 30px;
+  height: 30px;
+  background-color: #000; /* Black */
+  z-index: -1;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 1024px) {
-  body {
-    background-size: 20px 20px; /* Shrink squares */
-    background-position: 
-      10% 10%, 75% 15%, 25% 50%, 68% 50%, 48% 70%, 12% 85%;
+  body::before,
+  body::after,
+  .square.green,
+  .square.yellow,
+  .square.purple,
+  .square.black {
+    width: 20px;
+    height: 20px; /* Shrink squares */
   }
 }
 
-/* Adjust squares for mobile (small screens) */
 @media (max-width: 768px) {
-  body {
-    background-size: 15px 15px; /* Smaller squares */
-    background-position: 
-      8% 8%, 72% 12%, 20% 48%, 65% 48%, 40% 68%, 10% 80%;
+  body::before,
+  body::after,
+  .square.green,
+  .square.yellow,
+  .square.purple,
+  .square.black {
+    width: 15px;
+    height: 15px; /* Smaller squares */
   }
 }
 
