@@ -54,13 +54,14 @@ ul li {
 /* Scrollable content container */
 .scrollable-content {
   overflow-y: auto;
-  height: 100vh;
+  height: 100vh; /* Full viewport height */
   position: relative;
   z-index: 1;
-  padding: 40px 20px;
+  padding: 40px 20px 60px; /* Add bottom padding to ensure button is scrollable */
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 /* Static squares positioned using absolute */
@@ -164,7 +165,6 @@ ul li {
 
 header {
   text-align: left;
-  /* Removed margin-bottom */
 }
 
 .subheader {
@@ -204,9 +204,9 @@ h2 {
 
 /* Main Section */
 .main {
-  /* Removed margin-top */
 }
 
+/* Instructions Text */
 .instructions {
   font-size: 0.9em;
   margin-bottom: 10px;
@@ -214,6 +214,7 @@ h2 {
   color: #444;
 }
 
+/* Song List */
 ul {
   list-style: none;
   padding: 0;
