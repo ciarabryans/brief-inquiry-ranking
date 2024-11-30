@@ -64,13 +64,26 @@ function updateRanks() {
 // Initial render of the songs
 renderSongs();
 
-// Function to create a tweet with the Top 5 ranking
+// Function to create a tweet with the current ranking
 document.getElementById("tweet-results").addEventListener("click", () => {
-  const items = Array.from(songList.querySelectorAll("li")).slice(0, 5); // Select only the Top 5
-  const top5Ranking = items.map((li) => li.textContent.trim()).join(" | "); // Combine Top 5 song titles with ranks
+  const items = Array.from(songList.children).filter((child) => child.tagName === "LI");
+  const ranking = items.map((li) => li.textContent.trim()).join(" "); // Combine song titles with ranks already shown
 
   // Construct the tweet text
-  const tweetText = `My Top 5 ABIIOR songs: ${top5Ranking} #The1975\nRank your favorites: https://www.loveitifyourankit.com/`;
+  const baseText = `My ABIIOR ranking: `;
+  const hashtag = " #The1975";
+  const maxTweetLength = 280;
+
+  // Calculate available space for the ranking
+  const availableSpace = maxTweetLength - (baseText.length + hashtag.length);
+
+  // Truncate the ranking if necessary
+  let tweetRanking = ranking;
+  if (ranking.length > availableSpace) {
+    tweetRanking = ranking.slice(0, availableSpace - 3) + "..."; // Leave space for ellipsis
+  }
+
+  const tweetText = baseText + tweetRanking + hashtag;
 
   // Construct the Twitter share URL
   const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
