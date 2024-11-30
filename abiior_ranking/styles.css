@@ -41,12 +41,54 @@ body {
   }
 }
 
-/* Adjust squares for mobile (small screens) */
+/* Remove desktop background squares on mobile and reposition them */
 @media (max-width: 768px) {
   body {
-    background-size: 15px 15px; /* Smaller squares */
-    background-position: 
-      8% 8%, 72% 12%, 20% 48%, 65% 48%, 40% 68%, 10% 80%;
+    background: none; /* Remove desktop background squares */
+  }
+
+  /* Add squares as positioned elements around content */
+  .square {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    z-index: 1; /* Place squares below content */
+  }
+
+  .square.red {
+    background-color: #ff5f5f;
+    top: 5%;
+    left: 10%;
+  }
+
+  .square.blue {
+    background-color: #80c6ff;
+    top: 5%;
+    right: 10%;
+  }
+
+  .square.green {
+    background-color: #69e58b;
+    bottom: 15%;
+    left: 10%;
+  }
+
+  .square.yellow {
+    background-color: #ffd700;
+    bottom: 15%;
+    right: 10%;
+  }
+
+  .square.purple {
+    background-color: #b088f9;
+    top: 50%;
+    left: 5%;
+  }
+
+  .square.black {
+    background-color: #000;
+    top: 50%;
+    right: 5%;
   }
 }
 
