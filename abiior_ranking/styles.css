@@ -1,0 +1,144 @@
+/* Import Bembo Regular font */
+@font-face {
+  font-family: 'Bembo Regular';
+  src: url('./fonts/Bembo_Regular.otf') format('opentype');
+}
+
+/* Import Suisse Int'l Book font */
+@font-face {
+  font-family: "Suisse Int'l Book";
+  src: url("https://db.onlinewebfonts.com/t/17241fb9c2ffb3ec11eba762e771435f.eot");
+  src: url("https://db.onlinewebfonts.com/t/17241fb9c2ffb3ec11eba762e771435f.eot?#iefix") format("embedded-opentype"),
+       url("https://db.onlinewebfonts.com/t/17241fb9c2ffb3ec11eba762e771435f.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/17241fb9c2ffb3ec11eba762e771435f.woff") format("woff"),
+       url("https://db.onlinewebfonts.com/t/17241fb9c2ffb3ec11eba762e771435f.ttf") format("truetype"),
+       url("https://db.onlinewebfonts.com/t/17241fb9c2ffb3ec11eba762e771435f.svg#Suisse Int'l Book") format("svg");
+}
+
+/* General Reset */
+body, ul, li, button, h1, h2, p {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  font-family: 'Bembo Regular', Arial, sans-serif; /* Default font for all text */
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* Content Wrapper */
+.content {
+  max-width: 600px;
+  text-align: left;
+  border: 1px solid #fff; /* Thin white border */
+  padding: 20px 30px;
+}
+
+/* Header Section */
+header {
+  margin-bottom: 20px;
+}
+
+.subheader {
+  font-size: 0.8em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 10px 0;
+  font-family: "Suisse Int'l Book", Arial, sans-serif; /* Apply Suisse Int'l Book */
+  text-transform: uppercase; /* Transform text to uppercase */
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: normal;
+  margin-bottom: 10px;
+  font-family: "Suisse Int'l Book", Arial, sans-serif; /* Apply Suisse Int'l Book */
+  text-transform: uppercase; /* Transform text to uppercase */
+}
+
+.quote {
+  font-style: italic;
+  font-size: 0.9em;
+  line-height: 1.4;
+  color: #ccc;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+/* Main Section */
+.main {
+  margin: 20px 0;
+}
+
+.instructions {
+  font-size: 0.9em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background: #111; /* Darker box background */
+  border: 1px solid #fff; /* Thin white border */
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: grab;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+ul li:hover {
+  background: #222;
+}
+
+/* Button Styles */
+button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  font-size: 1em;
+  background: none;
+  color: #fff;
+  border: 1px solid #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Footer */
+footer {
+  text-align: left;
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #ccc;
+}
