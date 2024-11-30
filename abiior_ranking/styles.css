@@ -39,6 +39,7 @@ body {
   min-height: 100vh;
   overflow: hidden;
   position: relative;
+  display: none;
 }
 
 /* Apply Bembo Regular to paragraph and list text */
