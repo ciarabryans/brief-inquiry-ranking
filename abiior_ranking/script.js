@@ -51,8 +51,7 @@ document.getElementById("tweet-results").addEventListener("click", () => {
   const ranking = items.map((li, index) => `${index + 1}. ${li.textContent.trim()}`).join(" | ");
   
   // Construct the tweet text
-  const baseText = `Here's my "A Brief Inquiry Into Online Relationships" ranking: `;
-  const hashtag = " #The1975";
+  const baseText = `My ABIIOR ranking: `;
   const maxTweetLength = 280;
 
   // Calculate available space for the ranking
