@@ -57,7 +57,7 @@ ul li {
   height: 100vh; /* Full viewport height */
   position: relative;
   z-index: 1;
-  padding: 40px 20px 60px; /* Add bottom padding to ensure button is scrollable */
+  padding: 20px 20px 60px; /* Add bottom padding to ensure button is scrollable */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -310,6 +310,9 @@ footer {
     font-size: 0.6em; /* Smaller subheader */
     letter-spacing: 1.5px; /* Adjust letter spacing */
     margin-bottom: 5px; /* Reduce margin */
+  }
+  .marker {
+    font-size: 0.6em; /* Slightly smaller text */
   }
 
   /* Ensure the top of the screen is visible */
