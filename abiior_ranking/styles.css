@@ -87,6 +87,26 @@ body {
   }
 }
 
+/* Vertical Text for Album Title */
+.album-title {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: rotate(90deg);
+  font-size: 1.2em;
+  font-family: "Suisse Int'l Book", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #888;
+}
+
+/* Hide the vertical text on mobile */
+@media (max-width: 768px) {
+  .album-title {
+    display: none;
+  }
+}
+
 /* Content Styles */
 .content {
   max-width: 600px;
@@ -134,19 +154,6 @@ h2 {
   color: #555;
   text-align: left;
   margin-top: 20px;
-}
-
-/* Vertical Text for Album Title */
-.album-title {
-  position: absolute;
-  right: 10%;
-  top: 50%;
-  transform: rotate(90deg);
-  font-size: 1.2em;
-  font-family: "Suisse Int'l Book", Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #888;
 }
 
 /* Main Section */
