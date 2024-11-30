@@ -13,12 +13,12 @@ body {
   line-height: 1.6;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
   padding: 40px 20px;
   position: relative;
 
-  /* Background squares for desktop */
+  /* Static background squares */
   background-image: 
     linear-gradient(to bottom, #ff5f5f 30px, transparent 30px), /* Red */
     linear-gradient(to bottom, #80c6ff 30px, transparent 30px), /* Blue */
@@ -29,7 +29,8 @@ body {
   background-position: 
     12% 12%, 78% 18%, 30% 48%, 70% 55%, 50% 75%, 15% 88%;
   background-repeat: no-repeat;
-  background-size: 30px 30px; /* Set square size for desktop */
+  background-size: 30px 30px; /* Set square size */
+  background-attachment: fixed; /* Keep squares static during scrolling */
 }
 
 /* Adjust squares for tablet (medium screens) */
@@ -41,54 +42,12 @@ body {
   }
 }
 
-/* Remove desktop background squares on mobile and reposition them */
+/* Adjust squares for mobile (small screens) */
 @media (max-width: 768px) {
   body {
-    background: none; /* Remove desktop background squares */
-  }
-
-  /* Add squares as positioned elements around content */
-  .square {
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    z-index: 1; /* Place squares below content */
-  }
-
-  .square.red {
-    background-color: #ff5f5f;
-    top: 5%;
-    left: 10%;
-  }
-
-  .square.blue {
-    background-color: #80c6ff;
-    top: 5%;
-    right: 10%;
-  }
-
-  .square.green {
-    background-color: #69e58b;
-    bottom: 15%;
-    left: 10%;
-  }
-
-  .square.yellow {
-    background-color: #ffd700;
-    bottom: 15%;
-    right: 10%;
-  }
-
-  .square.purple {
-    background-color: #b088f9;
-    top: 50%;
-    left: 5%;
-  }
-
-  .square.black {
-    background-color: #000;
-    top: 50%;
-    right: 5%;
+    background-size: 15px 15px; /* Smaller squares */
+    background-position: 
+      8% 8%, 72% 12%, 20% 48%, 65% 48%, 40% 68%, 10% 80%;
   }
 }
 
