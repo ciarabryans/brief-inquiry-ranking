@@ -72,18 +72,3 @@ document.getElementById("tweet-results").addEventListener("click", () => {
   // Open the Twitter share URL
   window.open(tweetUrl, "_blank"); // Open Twitter's compose page
 });
-
-// Toggle Screenshot Mode
-document.getElementById("toggle-screenshot-mode").addEventListener("click", () => {
-  const contentContainer = document.querySelector(".content");
-  contentContainer.classList.toggle("screenshot-mode");
-
-  // Update button text
-  const toggleButton = document.getElementById("toggle-screenshot-mode");
-  if (contentContainer.classList.contains("screenshot-mode")) {
-    toggleButton.textContent = "Disable Screenshot Mode";
-  } else {
-    toggleButton.textContent = "Enable Screenshot Mode";
-  }
-});
-
