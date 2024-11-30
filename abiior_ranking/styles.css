@@ -17,6 +17,12 @@
   src: url("./fonts/Bembo_Regular.otf") format("opentype");
 }
 
+/* Import Bembo Semibold Regular Font Locally */
+@font-face {
+  font-family: "Bembo Semibold Regular";
+  src: url("./fonts/Bembo_Semibold_Regular.otf") format("opentype");
+}
+
 /* General Reset */
 body, ul, li, button, h1, h2, p {
   margin: 0;
@@ -38,6 +44,11 @@ body {
 /* Apply Bembo Regular to paragraph and list text */
 p, ul li {
   font-family: "Bembo Regular", Arial, serif;
+}
+
+/* Apply Bembo Semibold Regular to song titles */
+ul li {
+  font-family: "Bembo Semibold Regular", Arial, serif;
 }
 
 /* Scrollable content container */
@@ -263,7 +274,7 @@ footer {
 /* Smaller text on mobile */
 @media (max-width: 768px) {
   h1 {
-    font-size: 1.8em;
+    font-size: 2em;
   }
   h2 {
     font-size: 1.5em;
