@@ -213,9 +213,7 @@ h2 {
   margin: 8px 0;
   text-transform: uppercase;
   letter-spacing: 2px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 3px 0; /* Reduced padding */
+  padding: 6px 0; /* Reduced padding */
 }
 
 /* Instructions Text */
