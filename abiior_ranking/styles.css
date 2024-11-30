@@ -34,6 +34,7 @@ body {
   width: 30px;
   height: 30px;
   z-index: 0; /* Place below content */
+  animation: pulse 3s infinite ease-in-out; /* Apply pulsing animation */
 }
 
 .square.red {
@@ -87,23 +88,13 @@ body {
   }
 }
 
-/* Vertical Text for Album Title */
-.album-title {
-  position: absolute;
-  right: 10%;
-  top: 50%;
-  transform: rotate(90deg);
-  font-size: 1.2em;
-  font-family: "Suisse Int'l Book", Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #888;
-}
-
-/* Hide the vertical text on mobile */
-@media (max-width: 768px) {
-  .album-title {
-    display: none;
+/* Animation for pulsing effect */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1); /* Normal size */
+  }
+  50% {
+    transform: scale(1.2); /* Grow slightly */
   }
 }
 
@@ -154,6 +145,19 @@ h2 {
   color: #555;
   text-align: left;
   margin-top: 20px;
+}
+
+/* Vertical Text for Album Title */
+.album-title {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: rotate(90deg);
+  font-size: 1.2em;
+  font-family: "Suisse Int'l Book", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #888;
 }
 
 /* Main Section */
