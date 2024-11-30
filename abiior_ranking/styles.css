@@ -37,7 +37,7 @@ body {
   font-family: "Bembo Regular", Arial, serif;
   line-height: 1.6;
   min-height: 100vh;
-  overflow: hidden;
+  overflow: auto; /* Allow full scrolling */
   position: relative;
 }
 
@@ -53,11 +53,10 @@ ul li {
 
 /* Scrollable content container */
 .scrollable-content {
-  overflow-y: auto;
-  height: 100vh; /* Full viewport height */
+  overflow-y: visible; /* Allow content to be fully visible */
+  height: auto; /* Let the height adjust dynamically */
   position: relative;
   z-index: 1;
-  padding: 40px 20px 60px; /* Add bottom padding to ensure button is scrollable */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -74,37 +73,37 @@ ul li {
 }
 
 .square.red {
-  background-color: #ff5f5f;
+  background-color: rgba(255, 95, 95, 0.8); /* Slightly transparent red */
   top: 12%;
   left: 12%;
 }
 
 .square.blue {
-  background-color: #80c6ff;
+  background-color: rgba(128, 198, 255, 0.8); /* Slightly transparent blue */
   top: 78%;
   left: 78%;
 }
 
 .square.green {
-  background-color: #69e58b;
-  top: 48%;
+  background-color: rgba(105, 229, 139, 0.8); /* Slightly transparent green */
+  top: 20%; /* Adjusted for better visibility */
   left: 30%;
 }
 
 .square.yellow {
-  background-color: #ffd700;
+  background-color: rgba(255, 215, 0, 0.8); /* Slightly transparent yellow */
   top: 55%;
   left: 70%;
 }
 
 .square.purple {
-  background-color: #b088f9;
+  background-color: rgba(176, 136, 249, 0.8); /* Slightly transparent purple */
   top: 75%;
   left: 50%;
 }
 
 .square.black {
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent black */
   top: 88%;
   left: 15%;
 }
@@ -117,16 +116,11 @@ ul li {
   }
 }
 
-/* Further reduce square size and adjust position for mobile */
+/* Further reduce square size for mobile */
 @media (max-width: 768px) {
   .square {
     width: 15px;
     height: 15px;
-  }
-
-  .square.green {
-    top: 20%; /* Move green square higher */
-    left: 30%;
   }
 }
 
@@ -165,11 +159,13 @@ ul li {
   max-width: 600px;
   text-align: left;
   border: none;
-  padding: 20px 30px;
+  margin: 0 auto; /* Center horizontally */
 }
 
 header {
   text-align: left;
+  margin: 0; /* Ensure no unwanted spacing */
+  position: relative; /* Keep the header within the flow */
 }
 
 .subheader {
@@ -180,6 +176,7 @@ header {
   margin-bottom: 10px;
 }
 
+/* Headings */
 h1 {
   font-size: 2.5em;
   font-weight: bold;
@@ -198,6 +195,7 @@ h2 {
   color: #000;
 }
 
+/* Quote */
 .quote {
   font-style: italic;
   font-size: 0.9em;
@@ -209,6 +207,7 @@ h2 {
 
 /* Main Section */
 .main {
+  margin: 0; /* Ensure no additional margin-top */
 }
 
 /* Instructions Text */
@@ -227,8 +226,8 @@ ul {
 }
 
 ul li {
-  background: rgba(249, 249, 249, 0.75); /* Less transparent background */
-  border: 1px solid rgba(221, 221, 221, 0.8); /* Less transparent border */
+  background: rgba(249, 249, 249, 0.95); /* More opaque background */
+  border: 1px solid rgba(221, 221, 221, 0.95); /* More opaque border */
   margin: 8px 0;
   padding: 10px 15px;
   border-radius: 5px;
@@ -246,7 +245,7 @@ ul li .rank {
 }
 
 ul li:hover {
-  background: rgba(230, 230, 230, 0.9); /* Darker shade on hover */
+  background: rgba(230, 230, 230, 0.98); /* Almost fully opaque on hover */
 }
 
 /* Button Styles */
