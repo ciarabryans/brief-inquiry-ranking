@@ -24,63 +24,123 @@ body, ul, li, button, h1, h2, p {
 
 /* Body Styles */
 body {
-  background-color: #000; /* Black background */
-  color: #fff; /* White text */
-  font-family: 'Bembo Regular', Arial, sans-serif; /* Default font for all text */
+  background-color: #fff; /* White background */
+  color: #000; /* Black text */
+  font-family: 'Bembo Regular', Arial, sans-serif; /* Default font for body text */
   line-height: 1.6;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   min-height: 100vh;
   padding: 40px 20px;
+  position: relative;
+}
+
+/* Colored Squares */
+.square {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+
+.square.red {
+  background-color: #ff5f5f;
+  top: 20%;
+  right: 20%;
+}
+
+.square.blue {
+  background-color: #80c6ff;
+  top: 10%;
+  left: 25%;
+}
+
+.square.green {
+  background-color: #69e58b;
+  top: 60%;
+  left: 30%;
+}
+
+.square.yellow {
+  background-color: #ffd700;
+  top: 50%;
+  right: 30%;
+}
+
+.square.purple {
+  background-color: #b088f9;
+  bottom: 15%;
+  right: 15%;
+}
+
+.square.black {
+  background-color: #000;
+  bottom: 25%;
+  left: 20%;
 }
 
 /* Content Wrapper */
 .content {
   max-width: 600px;
   text-align: left;
-  border: 1px solid #fff; /* Thin white border */
+  border: none;
   padding: 20px 30px;
+  position: relative;
+  z-index: 2; /* Ensure content is above squares */
 }
 
 /* Header Section */
 header {
-  margin-bottom: 20px;
+  text-align: left;
+  margin-bottom: 30px;
 }
 
 .subheader {
   font-size: 0.8em;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #ccc;
+  color: #888;
   margin-bottom: 10px;
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: bold;
   margin: 10px 0;
   font-family: "Suisse Int'l Book", Arial, sans-serif; /* Apply Suisse Int'l Book */
   text-transform: uppercase; /* Transform text to uppercase */
+  color: #000;
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.8em;
   font-weight: normal;
   margin-bottom: 10px;
   font-family: "Suisse Int'l Book", Arial, sans-serif; /* Apply Suisse Int'l Book */
   text-transform: uppercase; /* Transform text to uppercase */
+  color: #000;
 }
 
 .quote {
   font-style: italic;
   font-size: 0.9em;
   line-height: 1.4;
-  color: #ccc;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  padding: 10px 0;
-  margin-bottom: 20px;
+  color: #555;
+  text-align: left;
+  margin-top: 20px;
+}
+
+/* Vertical Text for Album Title */
+.album-title {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: rotate(90deg);
+  font-size: 1.2em;
+  font-family: "Suisse Int'l Book", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #888;
 }
 
 /* Main Section */
@@ -90,23 +150,24 @@ h2 {
 
 .instructions {
   font-size: 0.9em;
-  text-transform: uppercase;
   margin-bottom: 10px;
   letter-spacing: 1px;
+  color: #444;
+  text-align: center;
 }
 
 ul {
   list-style: none;
   padding: 0;
+  margin: 20px 0;
 }
 
 ul li {
-  background: #111; /* Darker box background */
-  border: 1px solid #fff; /* Thin white border */
+  background: #f9f9f9; /* Slightly off-white box */
+  border: 1px solid #ddd; /* Subtle border */
   margin: 8px 0;
-  padding: 10px;
+  padding: 10px 15px;
   border-radius: 5px;
-  cursor: grab;
   font-size: 1em;
   text-transform: uppercase;
   display: flex;
@@ -116,12 +177,12 @@ ul li {
 ul li .rank {
   font-weight: bold;
   margin-right: 10px;
-  color: #ccc; /* Light gray for numbers */
+  color: #888; /* Light gray for numbers */
   text-transform: none; /* Keep numbers non-uppercase */
 }
 
 ul li:hover {
-  background: #222;
+  background: #e6e6e6;
 }
 
 /* Button Styles */
@@ -130,18 +191,18 @@ button {
   width: 100%;
   padding: 15px;
   font-size: 1em;
-  background: none;
+  background: #000;
   color: #fff;
-  border: 1px solid #fff;
+  border: none;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 button:hover {
-  background: #fff;
-  color: #000;
+  background: #444;
+  color: #fff;
 }
 
 /* Footer */
@@ -149,5 +210,5 @@ footer {
   text-align: left;
   margin-top: 20px;
   font-size: 0.9em;
-  color: #ccc;
+  color: #888;
 }

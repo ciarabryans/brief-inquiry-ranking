@@ -9,6 +9,17 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Colored Squares -->
+  <div class="square red"></div>
+  <div class="square blue"></div>
+  <div class="square green"></div>
+  <div class="square yellow"></div>
+  <div class="square purple"></div>
+  <div class="square black"></div>
+
+  <!-- Vertical Album Title -->
+  <div class="album-title">A Brief Inquiry Into Online Relationships</div>
+
   <div class="content">
     <header>
       <p class="subheader">FIRST, DISOBEY, THEN LOOK AT YOUR PHONES</p>
@@ -22,7 +33,7 @@
     <div class="main">
       <p class="instructions">Drag and drop the songs to rank them. Click the button to share your ranking on Twitter!</p>
       <ul id="song-list">
-        <!-- Songs will be dynamically added -->
+        <!-- Songs will be dynamically added via JavaScript -->
       </ul>
       <button id="tweet-results">Tweet Your Ranking</button>
     </div>
@@ -30,6 +41,7 @@
       <p>Poetry is in the streets in full living color</p>
     </footer>
   </div>
+  <!-- Include Sortable.js for drag-and-drop functionality -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
   <script src="script.js"></script>
 </body>
