@@ -273,18 +273,26 @@ footer {
   color: #888;
 }
 
-/* Compact Layout for Screenshot Mode */
+/* Screenshot Mode Layout with Two Columns */
 .screenshot-mode ul {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns for compact layout */
-  gap: 10px; /* Space between items */
+  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+  column-gap: 20px; /* Space between columns */
+  row-gap: 10px; /* Space between rows */
 }
 
 .screenshot-mode ul li {
-  text-align: left; /* Align text properly */
-  padding: 10px; /* Add padding for readability */
-  font-size: 0.9em; /* Slightly smaller font */
+  margin: 0; /* Remove extra margins for a tighter fit */
+  padding: 8px; /* Ensure consistent padding */
+  font-size: 0.9em; /* Slightly smaller font to fit two columns */
+  text-align: left; /* Maintain text alignment */
 }
+
+.screenshot-mode ul .rank {
+  font-weight: bold;
+  margin-right: 5px; /* Adjust space between rank and song title */
+}
+
 
 
 /* Smaller text on mobile */
