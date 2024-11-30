@@ -203,8 +203,19 @@ h2 {
   margin-top: 20px;
 }
 
-/* Main Section */
-.main {
+/* Marker styles */
+.marker {
+  text-align: center;
+  font-family: "Suisse Int'l Book", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 0.9em; /* Slightly smaller text */
+  color: #444;
+  margin: 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 3px 0; /* Reduced padding */
 }
 
 /* Instructions Text */
@@ -273,21 +284,6 @@ footer {
   color: #888;
 }
 
-/* Marker styles */
-.marker {
-  text-align: center;
-  font-family: "Suisse Int'l Book", Arial, sans-serif;
-  font-weight: bold;
-  font-size: 0.9em; /* Slightly smaller text */
-  color: #444;
-  margin: 8px 0;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 3px 0; /* Reduced padding */
-}
-
 /* Smaller text on mobile */
 @media (max-width: 768px) {
   h1 {
@@ -314,5 +310,10 @@ footer {
     font-size: 0.6em; /* Smaller subheader */
     letter-spacing: 1.5px; /* Adjust letter spacing */
     margin-bottom: 5px; /* Reduce margin */
+  }
+
+  /* Ensure the top of the screen is visible */
+  header {
+    margin-top: 20px;
   }
 }
