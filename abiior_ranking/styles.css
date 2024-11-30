@@ -73,38 +73,39 @@ ul li {
   animation: pulse 3s infinite ease-in-out;
 }
 
+/* Apply slight transparency to all squares */
 .square.red {
-  background-color: #ff5f5f;
+  background-color: rgba(255, 95, 95, 0.8); /* Slightly transparent red */
   top: 12%;
   left: 12%;
 }
 
 .square.blue {
-  background-color: #80c6ff;
+  background-color: rgba(128, 198, 255, 0.8); /* Slightly transparent blue */
   top: 78%;
   left: 78%;
 }
 
 .square.green {
-  background-color: #69e58b;
+  background-color: rgba(105, 229, 139, 0.8); /* Slightly transparent green */
   top: 48%;
   left: 30%;
 }
 
 .square.yellow {
-  background-color: #ffd700;
+  background-color: rgba(255, 215, 0, 0.8); /* Slightly transparent yellow */
   top: 55%;
   left: 70%;
 }
 
 .square.purple {
-  background-color: #b088f9;
+  background-color: rgba(176, 136, 249, 0.8); /* Slightly transparent purple */
   top: 75%;
   left: 50%;
 }
 
 .square.black {
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent black */
   top: 88%;
   left: 15%;
 }
