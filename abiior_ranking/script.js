@@ -18,15 +18,26 @@ const songs = [
 
 const songList = document.getElementById("song-list");
 
-// Add songs dynamically to the list
+// Add songs dynamically to the list with static markers for Top 5 and Top 10
 function renderSongs() {
   songList.innerHTML = ''; // Clear the list
+
   songs.forEach((song, index) => {
+    if (index === 5) {
+      const top5Marker = document.createElement("div");
+      top5Marker.classList.add("marker");
+      top5Marker.textContent = "— TOP 5 —";
+      songList.appendChild(top5Marker);
+    }
+    if (index === 10) {
+      const top10Marker = document.createElement("div");
+      top10Marker.classList.add("marker");
+      top10Marker.textContent = "— TOP 10 —";
+      songList.appendChild(top10Marker);
+    }
+
     const li = document.createElement("li");
     li.innerHTML = `<span class="rank">${index + 1}.</span> ${song}`;
-    if (index === 9) { // Add a "Top 10" marker after the 10th song
-      li.classList.add('top-divider');
-    }
     songList.appendChild(li);
   });
 }
@@ -34,22 +45,33 @@ function renderSongs() {
 // Initialize Sortable.js for drag-and-drop functionality
 new Sortable(songList, {
   animation: 150, // Smooth animation during drag-and-drop
-  onEnd: () => updateRanks() // Update ranks after reorder
+  onEnd: () => updateRanks() // Update ranks and re-insert static markers after reorder
 });
 
-// Update numbers after reordering
+// Update ranks and re-insert static markers after reordering
 function updateRanks() {
-  const items = Array.from(songList.children);
+  const items = Array.from(songList.querySelectorAll("li"));
   items.forEach((li, index) => {
     li.querySelector('.rank').textContent = `${index + 1}.`;
-
-    // Add or remove the "Top 10" marker
-    if (index === 9) {
-      li.classList.add('top-divider');
-    } else {
-      li.classList.remove('top-divider');
-    }
   });
+
+  // Remove existing markers and re-add
+  document.querySelectorAll(".marker").forEach(marker => marker.remove());
+
+  // Add static markers
+  if (items[5]) {
+    const top5Marker = document.createElement("div");
+    top5Marker.classList.add("marker");
+    top5Marker.textContent = "— TOP 5 —";
+    songList.insertBefore(top5Marker, items[5]);
+  }
+
+  if (items[10]) {
+    const top10Marker = document.createElement("div");
+    top10Marker.classList.add("marker");
+    top10Marker.textContent = "— TOP 10 —";
+    songList.insertBefore(top10Marker, items[10]);
+  }
 }
 
 // Initial render of the songs
@@ -57,7 +79,7 @@ renderSongs();
 
 // Function to create a tweet with the current ranking
 document.getElementById("tweet-results").addEventListener("click", () => {
-  const items = Array.from(songList.children);
+  const items = Array.from(songList.children).filter((child) => child.tagName === "LI");
   const ranking = items.map((li) => li.textContent.trim()).join(" "); // Combine song titles with ranks already shown
 
   // Construct the tweet text
