@@ -288,6 +288,7 @@ footer {
   }
   .content {
     padding-bottom: 100px;
+    padding-top: 10px;
   }
   footer {
     font-size: 0.8em;
