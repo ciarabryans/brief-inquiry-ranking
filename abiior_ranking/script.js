@@ -75,14 +75,15 @@ document.getElementById("tweet-results").addEventListener("click", () => {
 
 // Toggle Screenshot Mode
 document.getElementById("toggle-screenshot-mode").addEventListener("click", () => {
-  const listContainer = document.querySelector(".content");
-  listContainer.classList.toggle("screenshot-mode");
+  const contentContainer = document.querySelector(".content");
+  contentContainer.classList.toggle("screenshot-mode");
 
   // Update button text
   const toggleButton = document.getElementById("toggle-screenshot-mode");
-  if (listContainer.classList.contains("screenshot-mode")) {
+  if (contentContainer.classList.contains("screenshot-mode")) {
     toggleButton.textContent = "Disable Screenshot Mode";
   } else {
     toggleButton.textContent = "Enable Screenshot Mode";
   }
 });
+

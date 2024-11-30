@@ -293,6 +293,24 @@ footer {
   margin-right: 5px; /* Adjust space between rank and song title */
 }
 
+/* Ensure normal layout on mobile unless screenshot mode is active */
+@media (max-width: 768px) {
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Apply two-column layout only in screenshot mode */
+  .screenshot-mode ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .screenshot-mode ul li {
+    font-size: 0.85em; /* Slight adjustment for readability */
+  }
+}
 
 
 /* Smaller text on mobile */
