@@ -276,10 +276,10 @@ footer {
 /* Smaller text on mobile */
 @media (max-width: 768px) {
   h1 {
-    font-size: 1.4em;
+    font-size: 1.5em;
   }
   h2 {
-    font-size: 1.3em;
+    font-size: 1.4em;
   }
   p, ul li {
     font-size: 0.9em; /* Smaller text for body and lists */
