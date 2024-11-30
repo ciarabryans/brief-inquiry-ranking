@@ -70,7 +70,7 @@ document.getElementById("tweet-results").addEventListener("click", () => {
   const top5Ranking = items.map((li) => li.textContent.trim()).join(" | "); // Combine Top 5 song titles with ranks
 
   // Construct the tweet text
-  const tweetText = `My Top 5 ABIIOR songs: ${top5Ranking} #The1975`;
+  const tweetText = `My Top 5 ABIIOR songs: ${top5Ranking} #The1975\nRank your favorites: https://www.loveitifyourankit.com/`;
 
   // Construct the Twitter share URL
   const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
